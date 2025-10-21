@@ -336,7 +336,7 @@ textarea { min-height: 160px; resize: vertical; }
   font-size: 16px;
   color: var(--muted);
   border-top: 1px solid color-mix(in oklab, var(--fg) 15%, var(--bg) 85%);
-  background: var(--card);
+  background: var(--bg); /* gleiche Farbe wie die Seite */
 }
 
 .visitor-badge {
@@ -345,6 +345,7 @@ textarea { min-height: 160px; resize: vertical; }
   border-radius: 6px;
   height: 22px;
 }
+
 
 
 
