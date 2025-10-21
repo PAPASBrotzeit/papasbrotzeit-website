@@ -253,24 +253,81 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,.06);
 }
 
-form label { display: block; margin: 12px 0; }
+/* ---------- Kontaktseite hübsch & ordentlich ---------- */
+* { box-sizing: border-box; }           /* saubere Breitenberechnung */
+
+.container { max-width: 860px; margin: 0 auto; padding: 24px; text-align: left; }
+
+.page-title {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  margin: 8px 0 18px;
+  color: var(--accent);
+}
+
+.form-card {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--fg) 15%, var(--bg) 85%);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* Grid */
+.form-grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+form label { display: block; margin: 14px 0; }
 form label > span { display: block; font-weight: 700; margin-bottom: 6px; color: var(--fg); }
 
+/* Felder – dezente Ränder, innen weiß, sauberer Fokus */
 input[type="text"], input[type="email"], textarea {
-  width: 100%; background: var(--bg); color: var(--fg);
-  border: 2px solid var(--accent); border-radius: 10px;
-  padding: 12px 14px; outline: none; transition: box-shadow .2s, border-color .2s;
+  width: 100%;
+  background: var(--card);
+  color: var(--fg);
+  border: 1.5px solid color-mix(in oklab, var(--fg) 20%, var(--bg) 80%);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow .18s, border-color .18s, background .18s, color .18s;
 }
-input:focus, textarea:focus { box-shadow: 0 0 0 4px rgba(16,12,233,.2); border-color: var(--accent); }
+input::placeholder, textarea::placeholder {
+  color: color-mix(in oklab, var(--fg) 40%, var(--bg) 60%);
+}
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent 70%);
+}
 
-.row { display: grid; gap: 12px; grid-template-columns: 1fr; }
-@media (min-width: 720px) { .row { grid-template-columns: 1fr 1fr; } }
+/* Nachricht-Feld höher, bündig */
+textarea { min-height: 160px; resize: vertical; }
 
-.form-actions { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+/* Aktionen – Button rechts, Status daneben */
+.form-actions {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 12px; justify-content: flex-end;
+}
+.form-actions button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease, background .2s ease;
+}
+.form-actions button:hover { transform: translateY(-2px); }
+.form-actions button:disabled { opacity: .7; cursor: not-allowed; }
 #formStatus { color: var(--muted); font-weight: 600; }
+
+/* Kleinigkeit: Labels nicht mittig via globalem body-text-align */
+.container { text-align: left; }
 .hp { position: absolute; left: -9999px; } /* Honeypot verstecken */
 
-nav .active { border-bottom: 2px solid var(--accent); }
+
 
 
 
