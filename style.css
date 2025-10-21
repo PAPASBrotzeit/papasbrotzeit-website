@@ -274,6 +274,7 @@ body {
 }
 
 /* Grid */
+.page-title { font-size: clamp(28px, 4vw, 40px); margin: 8px 0 18px; color: var(--accent); }
 .form-grid { display: grid; gap: 16px; }
 .grid-2 { grid-template-columns: 1fr; }
 @media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
@@ -326,6 +327,7 @@ textarea { min-height: 160px; resize: vertical; }
 /* Kleinigkeit: Labels nicht mittig via globalem body-text-align */
 .container { text-align: left; }
 .hp { position: absolute; left: -9999px; } /* Honeypot verstecken */
+
 
 
 
