@@ -243,5 +243,35 @@ body {
 .logo:hover .logo-icon {
   transform: scale(1.1);
 }
+.container { max-width: 920px; margin: 0 auto; padding: 24px; text-align: left; }
+
+.form-card {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+form label { display: block; margin: 12px 0; }
+form label > span { display: block; font-weight: 700; margin-bottom: 6px; color: var(--fg); }
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%; background: var(--bg); color: var(--fg);
+  border: 2px solid var(--accent); border-radius: 10px;
+  padding: 12px 14px; outline: none; transition: box-shadow .2s, border-color .2s;
+}
+input:focus, textarea:focus { box-shadow: 0 0 0 4px rgba(16,12,233,.2); border-color: var(--accent); }
+
+.row { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .row { grid-template-columns: 1fr 1fr; } }
+
+.form-actions { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+#formStatus { color: var(--muted); font-weight: 600; }
+.hp { position: absolute; left: -9999px; } /* Honeypot verstecken */
+
+nav .active { border-bottom: 2px solid var(--accent); }
+
+
 
 
