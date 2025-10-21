@@ -328,6 +328,26 @@ textarea { min-height: 160px; resize: vertical; }
 .container { text-align: left; }
 .hp { position: absolute; left: -9999px; } /* Honeypot verstecken */
 
+/* ---------- Footer & Besucherzähler ---------- */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  color: var(--muted);
+  border-top: 1px solid color-mix(in oklab, var(--fg) 15%, var(--bg) 85%);
+  background: var(--card);
+}
+
+.visitor-badge {
+  vertical-align: middle;
+  margin: 0 4px;
+  border-radius: 6px;
+  height: 22px;
+}
+
+
+
 
 
 
