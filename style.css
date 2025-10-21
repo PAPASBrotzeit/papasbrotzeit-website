@@ -219,6 +219,7 @@ body {
 #themeToggle:hover {
   transform: translateY(-2px);
 }
+}
 
 /* --- Logo mit Bild --- */
 .logo {
@@ -226,6 +227,7 @@ body {
   align-items: center;
   font-weight: 800;
   font-size: 20px;
+  margin-right: 20px;
   color: var(--accent);
 }
 
@@ -234,5 +236,12 @@ body {
   height: 28px;
   border-radius: 50%;    /* rund */
   margin-right: 8px;     /* Abstand zum Text */
+  transition: transform 0.2s ease;
 }
+
+/* Optional: kleiner Zoom-Effekt beim Hover */
+.logo:hover .logo-icon {
+  transform: scale(1.1);
+}
+
 
