@@ -220,10 +220,19 @@ body {
   transform: translateY(-2px);
 }
 
-/* Logo */
+/* --- Logo mit Bild --- */
 .logo {
+  display: flex;
+  align-items: center;
   font-weight: 800;
   font-size: 20px;
-  margin-right: 20px;
   color: var(--accent);
 }
+
+.logo-icon {
+  width: 28px;           /* Größe des Logos */
+  height: 28px;
+  border-radius: 50%;    /* rund */
+  margin-right: 8px;     /* Abstand zum Text */
+}
+
