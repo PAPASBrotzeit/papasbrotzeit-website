@@ -3,46 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontakt PapasBrotzeit</title>
-  <link rel="icon" type="image/png" href="favicon_01.png">
+  <title>Kontakt – PapasBrotzeit</title>
+  <link rel="icon" type="image/png" href="favicon_01.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-<header>
-  <nav class="navbar">
-    <div class="nav-left">
-      <span class="logo">
-  <img src="favicon_01.png" alt="PapasBrotzeit Logo" class="logo-icon">
-  PapasBrotzeit
-</span>
-      <a href="index.html">Startseite</a>
-      <a href="ueber.html">Über mich</a>
-      <a href="kontakt.html">Kontakt</a>
-    </div>
 
- <div class="nav-right">
-  <a href="https://www.instagram.com/papas_brotzeit" target="_blank" aria-label="Instagram">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-  <a href="https://www.youtube.com/@PapasBrotzeit" target="_blank" aria-label="YouTube">
-    <i class="fa-brands fa-youtube"></i>
-  </a>
-  <button id="themeToggle">🌙 Dark Mode</button>
-</div>
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <span class="logo">
+          <img src="favicon_01.png" alt="PapasBrotzeit Logo" class="logo-icon">
+          PapasBrotzeit
+        </span>
+        <a href="index.html">Startseite</a>
+        <a href="ueber.html">Über mich</a>
+        <a href="kontakt.html" class="active">Kontakt</a>
+      </div>
 
-  </nav>
-</header>
+      <div class="nav-right">
+        <a href="https://www.instagram.com/papas_brotzeit" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@PapasBrotzeit" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <button id="themeToggle">🌙 Dark Mode</button>
+      </div>
+    </nav>
+  </header>
 
-  <button id="themeToggle">🌙 Dark Mode</button>
+  <main class="container">
+    <h1>Schreib mir eine Nachricht</h1>
 
-  <h1>Kontakt</h1>
-  <p>mich findest du auf Instagram: link:https://www.instagram.com/papas_brotzeit/</p>
-  <p>Du kannst mir schreiben an: <b>info@papasbrotzeit.de</b></p>
+    <section class="form-card">
+      <!-- 👉 Ersetze ACTION später mit deinem Formspree-Link -->
+      <form id="contactForm" action="https://formspree.io/f/DEIN_FORM_ID" method="POST" novalidate>
+        <!-- Anti-Spam Honeypot -->
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="row">
+          <label>
+            <span>Dein Name</span>
+            <input type="text" name="name" placeholder="Max Mustermann" required>
+          </label>
+          <label>
+            <span>E-Mail</span>
+            <input type="email" name="email" placeholder="max@mail.de" required>
+          </label>
+        </div>
+
+        <label>
+          <span>Betreff</span>
+          <input type="text" name="subject" placeholder="Worum geht’s?" required>
+        </label>
+
+        <label>
+          <span>Nachricht</span>
+          <textarea name="message" rows="5" placeholder="Deine Nachricht…" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="sendBtn">📨 Senden</button>
+          <span id="formStatus" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
