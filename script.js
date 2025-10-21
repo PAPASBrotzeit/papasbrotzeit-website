@@ -101,4 +101,44 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTheme(isDark ? "light" : "dark");
     });
   }
+  // ===== KONTAKT-FORMULAR (Formspree) =====
+const form = document.getElementById("contactForm");
+const sendBtn = document.getElementById("sendBtn");
+const formStatus = document.getElementById("formStatus");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Client-Validation
+    if (!form.checkValidity()) {
+      formStatus.textContent = "Bitte prüfe deine Eingaben.";
+      return;
+    }
+
+    sendBtn.disabled = true;
+    formStatus.textContent = "Sende …";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      });
+
+      if (res.ok) {
+        form.reset();
+        formStatus.textContent = "Danke! Deine Nachricht ist angekommen. ✨";
+      } else {
+        formStatus.textContent = "Ups – senden fehlgeschlagen. Versuch’s später nochmal.";
+      }
+    } catch (err) {
+      formStatus.textContent = "Netzwerkfehler – bitte später erneut probieren.";
+    } finally {
+      sendBtn.disabled = false;
+    }
+  });
+}
+
 });
+
