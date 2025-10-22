@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brotzeit für meine Tochter – PapasBrotzeit</title>
+  <link rel="icon" type="image/png" href="favicon_01.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <span class="logo">
+          <img src="favicon_01.png" alt="PapasBrotzeit Logo" class="logo-icon">
+          PapasBrotzeit
+        </span>
+        <a href="index.html">Startseite</a>
+        <a href="ueber.html">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="https://www.instagram.com/papas_brotzeit" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@PapasBrotzeit" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <!-- Dark-Mode-Button NUR HIER, EINMAL! -->
+        <button id="themeToggle">🌙 Dark Mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dein Seiteninhalt … -->
+   <h1>Brotzeit Galerie 🖼️</h1>
+   <section class="carousel" aria-label="Meine Brotzeit-Galerie">
+  <h2>🍱 Meine Brotzeit-Galerie</h2>
+  <div class="slides">
+    <img src="images/ig1.jpg" alt="Brotzeit 1">
+    <img src="images/ig2.jpg" alt="Brotzeit 2">
+    <img src="images/ig3.jpg" alt="Brotzeit 3">
+    <img src="images/ig4.jpg" alt="Brotzeit 4">
+  </div>
+
+  <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
+  <button class="nav next" aria-label="Nächstes Bild">›</button>
+
+  <div class="dots" aria-hidden="true"></div>
+</section>
+   <p><a href="index.html">⬅️ Zurück zur Startseite</a></p>
+
+  <!-- Script IMMER ganz unten vor </body> -->
+  <script src="script.js"></script>
+ <footer class="footer">
+     <h3>💙 Unterstütze PapasBrotzeit</h3>
+  <p>Wenn dir meine Ideen gefallen, kannst du mich mit einer kleinen Spende unterstützen. Danke! 🙏</p>
+  <a href="https://www.paypal.com/donate/?hosted_button_id=KLRW7D876EG5S"
+     target="_blank"
+     class="donate-btn">
+     💰 Jetzt spenden mit PayPal
+  </a>
+  <p>
+    👀 Diese Seite wurde schon 
+    <img 
+      src="https://visitor-badge.laobi.icu/badge?page_id=papasbrotzeit-website" 
+      alt="visitor badge"
+      class="visitor-badge">
+    Mal besucht – danke, dass du da bist ❤️
+  </p>
+   
+</footer>
+</body>
+
+</html>
