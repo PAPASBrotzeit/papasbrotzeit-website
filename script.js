@@ -139,6 +139,76 @@ if (form) {
     }
   });
 }
+// ===== Simple Carousel =====
+const carousels = document.querySelectorAll(".carousel");
+carousels.forEach((c) => {
+  const slides = c.querySelector(".slides");
+  const imgs = [...c.querySelectorAll("img")];
+  const prev = c.querySelector(".prev");
+  const next = c.querySelector(".next");
+  const dotsWrap = c.querySelector(".dots");
+  let i = 0, auto;
+
+  imgs.forEach((_, idx) => {
+    const b = document.createElement("button");
+    b.addEventListener("click", () => go(idx));
+    dotsWrap.appendChild(b);
+  });
+  const dots = [...dotsWrap.children];
+
+  function render() {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+    dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
+  }
+  function go(n) { i = (n + imgs.length) % imgs.length; render(); }
+  function nextImg() { go(i + 1); }
+  function prevImg() { go(i - 1); }
+
+  next.addEventListener("click", nextImg);
+  prev.addEventListener("click", prevImg);
+
+  // Auto-Play (Pause bei Hover)
+  function start() { auto = setInterval(nextImg, 3500); }
+  function stop()  { clearInterval(auto); }
+  c.addEventListener("mouseenter", stop);
+  c.addEventListener("mouseleave", start);
+
+  render(); start();
+});
+/* ===== Typing Intro ===== */
+const intro = document.getElementById("intro");
+if (intro) {
+  const l1 = intro.dataset.line1 || "";
+  const l2 = intro.dataset.line2 || "";
+
+  // Platz für zwei Zeilen anlegen
+  const s1 = document.createElement("span");
+  const br = document.createElement("br");
+  const s2 = document.createElement("span");
+  intro.append(s1, br, s2);
+
+  intro.classList.add("typing");
+
+  // Tippen
+  const speed = 28; // ms pro Zeichen (langsamer/schneller: Wert anpassen)
+
+  function type(node, text) {
+    return new Promise((resolve) => {
+      let i = 0;
+      const t = setInterval(() => {
+        node.textContent += text[i++];
+        if (i >= text.length) { clearInterval(t); resolve(); }
+      }, speed);
+    });
+  }
+
+  (async () => {
+    await type(s1, l1);           // Zeile 1 tippen
+    await new Promise(r => setTimeout(r, 250)); 
+    await type(s2, " " + l2);     // Zeile 2 tippen
+    intro.classList.remove("typing");
+    intro.classList.add("done");
+  })();
+}
 
 });
-
