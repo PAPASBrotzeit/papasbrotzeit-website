@@ -289,7 +289,15 @@ body {
 }
 
 /* Grid */
-.page-title { font-size: clamp(28px, 4vw, 40px); margin: 8px 0 18px; color: var(--accent); }
+.page-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-top: 100px;  /* Abstand unterhalb der fixierten Navbar */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
 .form-grid { display: grid; gap: 16px; }
 .grid-2 { grid-template-columns: 1fr; }
 @media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
